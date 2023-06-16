@@ -1,0 +1,36 @@
+{
+    "name": "on-prem-sql-profile",
+    "displayName": "On-prem SQL Profile",
+    "sql": {
+        "host": "34.105.237.191",
+        "port": 3306,
+        "username": "myuser",
+        "password": "mypass"
+    }
+}
+
+// curl --header "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+//      --header 'Content-Type: application/json' \
+//      --data @./create_connection_job.json \
+//      -X POST \
+//      https://datamigration.googleapis.com/v1/projects/db-migration-project-s2042203/locations/europe-west2-c/connectionProfiles?connectionProfileId=on-prem-sql-profile
+
+// fetch('https://datamigration.googleapis.com/v1/projects/db-migration-project-s2042203/locations/europe-west2-c/connectionProfiles?connectionProfileId=on-prem-sql-profile', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+//     body: "./create_connection_job.json"
+// })
+//    .then(response => response.text())
+//    .then(data => console.log(data))
+
+// fetch('https://reqbin.com/echo', {
+//     method: 'POST',
+//     headers: {
+//         'Accept': '*/*',
+//     },
+//     body: "[post data]"
+// })
+//    .then(response => response.text())
+//    .then(data => console.log(data))

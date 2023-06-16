@@ -1,14 +1,14 @@
-var mysql = require('mysql');
+var mysql = require('mysql2');
 
 // Load ENV vars
 const dotEnvOption = {
-    silent: true,
-    path: 'env/dev.env'
+  silent: true,
+  path: 'env/dev.env'
 }
 
 
 if (process.env.NODE_ENV === 'production') {
-    dotEnvOption.path = 'env/prod.env'
+  dotEnvOption.path = 'env/prod.env'
 }
 
 require('dotenv').config(dotEnvOption)
@@ -33,36 +33,40 @@ app.use(bodyParser.json({ limit: '1mb' }))
 app.use(bodyParser.urlencoded({ limit: '1mb', extended: true }))
 
 
-/**
- * Logging
- */
 morgan.token('current_user', (req) => (req.user ? req.user.name : 'anonymous'))
 
 
 /* Setup security middlewares
- * -------------------------- */
+* -------------------------- */
 app.use(helmet.hsts({ maxAge: 10886400000, includeSubdomains: true }))
 app.use(cors({ origin: '*' }))
 
 
 /* Setup DB connection
- * ---------------------------- */
+* ---------------------------- */
 
 var connection = mysql.createConnection({
   host: "34.105.237.191",
+  port: "3306",
   user: "myuser",
-  password: "mypass"
+  password: "mypass",
+  database: "test_database"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
+  connection.query("SELECT * FROM Claim", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
 });
 
 //require('./connections')
 
 /* Controllers
- * ----------- */
+* ----------- */
 require('./controllers')(app)
 
 module.exports = app
+

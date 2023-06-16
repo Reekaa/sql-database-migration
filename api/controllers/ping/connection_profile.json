@@ -1,0 +1,10 @@
+{
+    "name": "on-prem-sql-profile",
+    "displayName": "On-prem SQL Profile",
+    "sql": {
+        "host": "34.105.237.191",
+        "port": 3306,
+        "username": "myuser",
+        "password": "mypass"
+    }
+}
