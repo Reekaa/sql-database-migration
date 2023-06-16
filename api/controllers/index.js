@@ -13,6 +13,7 @@ module.exports = app => {
     app.all('*', middlewares.api.initAPI)
 
     app.use(`${API_PATH}/ping`, require('./ping').routes)
+    app.use(`${API_PATH}/connection-profile`, require('./ping').routes)
     
     // Add default route
     app.get('*', (req, res) => {
