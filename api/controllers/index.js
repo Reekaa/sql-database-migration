@@ -12,7 +12,7 @@ module.exports = app => {
     // Set apiResponse Objects
     app.all('*', middlewares.api.initAPI)
 
-    app.use(`${API_PATH}/migrate`, require('./ping').routes)
+    app.use(`${API_PATH}/migrate`, require('./migrate').routes)
     
     // Add default route
     app.get('*', (req, res) => {
