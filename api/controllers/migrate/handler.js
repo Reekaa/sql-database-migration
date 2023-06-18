@@ -22,4 +22,13 @@ const createDestinationConnectionProfile = async (req, res) => {
     }
 }
 
-module.exports = { ping, createConnectionProfile, createDestinationConnectionProfile }
+const createMigrationJob = async (req, res) => {
+    try {
+        shell.exec('/home/db_migration_project_s2042203/sql-database-migration/api/controllers/migrate/create_migration_job.sh')
+        res.apiResponse('success')
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+module.exports = { ping, createConnectionProfile, createDestinationConnectionProfile, createMigrationJob }

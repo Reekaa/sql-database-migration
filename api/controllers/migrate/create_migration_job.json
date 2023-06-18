@@ -1,0 +1,18 @@
+{
+    "name": "sql-migration-job",
+    "displayName": "sql migration job",
+    "type": "ONE_TIME",
+    "source": "projects/db-migration-project-s2042203/locations/europe-west2/connectionProfiles/on-prem-sql-profile",
+    "destination": "projects/db-migration-project-s2042203/locations/europe-west2/connectionProfiles/destination-sql-profile",
+    "sourceDatabase": {
+        "provider": "DATABASE_PROVIDER_UNSPECIFIED",
+        "engine": "MYSQL"
+    },
+    "destinationDatabase": {
+        "provider": "CLOUDSQL",
+        "engine": "MYSQL"
+    },
+    "vpcPeeringConnectivity": {
+        "vpc": "default"
+    }
+}
