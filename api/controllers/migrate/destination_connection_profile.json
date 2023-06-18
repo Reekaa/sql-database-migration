@@ -1,0 +1,15 @@
+{
+    "name": "target-sql-profile",
+    "displayName": "target sql profile",
+    "cloudsql": {
+        "settings": {
+            "databaseVersion": "MYSQL_8_0",
+            "tier": "db-n1-standard-4",
+            "activationPolicy": "ALWAYS",
+            "autoStorageIncrease": false,
+            "zone": "europe-west2-c",
+            "sourceId": "projects/db-migration-project-s2042203/locations/europe-west2/connectionProfiles/on-prem-sql-profile",
+            "rootPassword": "mytargetpwd"
+        }
+    }
+}
