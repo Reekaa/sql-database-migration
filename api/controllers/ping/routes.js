@@ -1,6 +1,5 @@
 const routes = require('express').Router()
-const { ping } = require('./handler')
-const { createConnectionProfile } = require('./connection-profile')
+const { ping, createConnectionProfile } = require('./handler')
 
 routes.get('/', ping)
 routes.get('/connection-profile', createConnectionProfile)
