@@ -1,0 +1,2 @@
+curl --header "Authorization: Bearer $(gcloud auth application-default print-access-token)" \
+     -X POST https://datamigration.googleapis.com/v1/projects/db-migration-project-s2042203/locations/europe-west2/migrationJobs/sql-migrationjob:start
