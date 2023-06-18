@@ -46,7 +46,7 @@ app.use(cors({ origin: '*' }))
 * ---------------------------- */
 
 var connection = mysql.createConnection({
-  host: "34.105.237.191",
+  host: "34.105.242.205",
   port: "3306",
   user: "myuser",
   password: "mypass",
