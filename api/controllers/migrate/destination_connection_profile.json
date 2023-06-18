@@ -1,6 +1,6 @@
 {
-    "name": "target-sql-profile",
-    "displayName": "target sql profile",
+    "name": "destination-sql-profile",
+    "displayName": "destination sql profile",
     "cloudsql": {
         "settings": {
             "databaseVersion": "MYSQL_8_0",
