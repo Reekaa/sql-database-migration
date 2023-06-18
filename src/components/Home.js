@@ -40,18 +40,19 @@ export default function Home() {
         event.preventDefault();
         console.log('submit migration')
         try {
-            const res = await axios.post(
-                'https://datamigration.googleapis.com/v1/projects/db-migration-project-s2042203/locations/europe-west2-c/connectionProfiles?connectionProfileId=on-prem-sql-profile',
-                connectionProfile,
+            const res = await axios.get(
+                'http://34.105.242.205/api/v1/migrate/connection-profile',
+                // connectionProfile,
                 {
-                    method: 'POST',
+                    method: 'GET',
                     withCredentials: true,
                     headers: {
                         "Content-Type": "application/json"
                     }
                 }
             );
-            if (res.status === 201) {
+            if (res.status === 200) {
+                console.log(res.data)
                 console.log('success');
             }
         } catch (err) {
