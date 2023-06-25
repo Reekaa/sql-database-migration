@@ -4,7 +4,7 @@ const { ping, createConnectionProfile, createDestinationConnectionProfile, creat
 routes.get('/ping', ping)
 routes.post('/connection-profile', createConnectionProfile)
 routes.post('/destination-connection-profile', createDestinationConnectionProfile)
-routes.get('/create-migration-job', createMigrationJob)
+routes.post('/create-migration-job', createMigrationJob)
 routes.get('/start-migration-job', startMigrationJob)
 
 module.exports = routes
