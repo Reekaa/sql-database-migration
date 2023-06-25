@@ -1,11 +1,19 @@
 const shell = require('shelljs')
+const connectionProfile = require('./connection_profile.json')
 
 const ping = async (req, res) => {
     res.apiResponse('pong')
 }
 
 const createConnectionProfile = async (req, res) => {
+    // console.log(req.body);
+    // const { database } = req.body 
     try {
+        // Object.entries(connectionProfile).forEach(([key, value]) => {
+        //     if(key === "database"){     
+        //      data[key].time_created = database;
+        //      }
+        // });
         shell.exec('chmod +x /home/db_migration_project_s2042203/sql-database-migration/api/controllers/migrate/connection_profile.sh')
         shell.exec('/home/db_migration_project_s2042203/sql-database-migration/api/controllers/migrate/connection_profile.sh')
         res.status(200).json({
