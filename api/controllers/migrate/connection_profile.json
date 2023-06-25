@@ -1,7 +1,7 @@
 {
     "name": "on-prem-sql-profile",
     "displayName": "On-prem SQL Profile",
-    "mysql": {
+    "database": {
         "host": "34.105.242.205",
         "port": 3306,
         "username": "myuser",

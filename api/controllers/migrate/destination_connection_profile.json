@@ -1,7 +1,7 @@
 {
     "name": "destination-sql-profile",
     "displayName": "destination sql profile",
-    "cloudsql": {
+    "database": {
         "settings": {
             "databaseVersion": "MYSQL_8_0",
             "tier": "db-n1-standard-4",
