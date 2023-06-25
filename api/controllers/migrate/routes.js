@@ -5,6 +5,6 @@ routes.get('/ping', ping)
 routes.post('/connection-profile', createConnectionProfile)
 routes.post('/destination-connection-profile', createDestinationConnectionProfile)
 routes.post('/create-migration-job', createMigrationJob)
-routes.get('/start-migration-job', startMigrationJob)
+routes.post('/start-migration-job', startMigrationJob)
 
 module.exports = routes
