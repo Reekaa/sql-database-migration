@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import axios from 'axios';
-import connectionProfile from '../connection_profile.json'
+// import connectionProfile from '../connection_profile.json'
 
 
 export default function Home() {
@@ -41,18 +41,19 @@ export default function Home() {
         console.log('submit migration')
         try {
             const res = await axios.get(
-                'http://34.105.242.205/api/v1/migrate/connection-profile',
+                "http://34.105.242.205/api/v1/migrate/ping",
+                // 'http://34.105.242.205/api/v1/migrate/connection-profile',
                 // connectionProfile,
                 {
                     method: 'GET',
-                    withCredentials: true,
+                    withCredentials: false,
                     headers: {
                         "Content-Type": "application/json"
                     }
                 }
             );
             if (res.status === 200) {
-                console.log(res.data)
+                // console.log(res.data)
                 console.log('success');
             }
         } catch (err) {
@@ -105,22 +106,21 @@ export default function Home() {
                         margin="normal"
                         required
                         fullWidth
-                        name="password"
+                        name="port"
                         label="Port"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
+                        id="port"
+                        autoComplete="port"
                         onChange={handleInput}
                     />
                     <TextField
                         margin="normal"
                         required
                         fullWidth
-                        name="password"
+                        name="username"
                         label="Username"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
+                        type="username"
+                        id="username"
+                        autoComplete="username"
                         onChange={handleInput}
                     />
                     <TextField

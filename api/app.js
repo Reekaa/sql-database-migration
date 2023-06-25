@@ -38,8 +38,9 @@ morgan.token('current_user', (req) => (req.user ? req.user.name : 'anonymous'))
 
 /* Setup security middlewares
 * -------------------------- */
-app.use(helmet.hsts({ maxAge: 10886400000, includeSubdomains: true }))
-app.use(cors({ origin: '*' }))
+app.use(helmet.hsts({ maxAge: 10886400000, includeSubDomains: true }))
+// app.use(cors({ origin: '*' }))
+app.use(cors({ credentials: true, origin: ["http://localhost:3000", "http://localhost:3000", "http://34.105.242.205/api/v1/migrate"] }));
 
 
 /* Setup DB connection
@@ -56,10 +57,10 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
-  connection.query("SELECT * FROM Claim", function (err, result, fields) {
-    if (err) throw err;
-    console.log(result);
-  });
+  // connection.query("SELECT * FROM Claim", function (err, result, fields) {
+  //   if (err) throw err;
+  //   console.log(result);
+  // });
 });
 
 //require('./connections')
